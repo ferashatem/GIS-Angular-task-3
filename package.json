@@ -17,6 +17,8 @@
     "@angular/forms": "^22.2.0",
     "@angular/platform-browser": "^22.2.0",
     "@angular/router": "^22.2.0",
+    "@arcgis/core": "^5.1.27",
+    "@arcgis/map-components": "^5.1.27",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

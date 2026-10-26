@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import '@arcgis/map-components/components/arcgis-map';
+import '@arcgis/map-components/components/arcgis-zoom';
+import '@arcgis/map-components/components/arcgis-home';
+import '@arcgis/map-components/components/arcgis-legend';
 import { RouterOutlet } from '@angular/router';
 
+
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.scss',
   templateUrl: './app.html',
+  styleUrl: './app.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class App {
-  protected readonly title = signal('employee-gis-map');
+  onViewReady(event: Event): void {
+    const mapEl = event.target as HTMLArcgisMapElement;
+    console.log('Map view is ready:', mapEl.view.spatialReference.wkid);
+  }
 }
