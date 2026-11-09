@@ -1,0 +1,200 @@
+<div class="app-shell">
+  <nav class="navigation-rail" aria-label="Workspace navigation">
+    <a
+      class="brand-mark"
+      href="#map-workspace"
+      (click)="navigate($event, 'map-workspace')"
+      aria-label="Atlas map workspace"
+      ><app-ui-icon name="layers"
+    /></a>
+    <span class="rail-divider"></span>
+    <a
+      class="rail-link"
+      [class.active]="activeSection() === 'map-workspace'"
+      [attr.aria-current]="activeSection() === 'map-workspace' ? 'location' : null"
+      (click)="navigate($event, 'map-workspace')"
+      href="#map-workspace"
+      aria-label="Map overview"
+      title="Map overview"
+      ><app-ui-icon name="map"
+    /></a>
+    <a
+      class="rail-link"
+      href="#employee-directory"
+      [class.active]="activeSection() === 'employee-directory'"
+      [attr.aria-current]="activeSection() === 'employee-directory' ? 'location' : null"
+      (click)="navigate($event, 'employee-directory')"
+      aria-label="Employee directory"
+      title="Employee directory"
+      ><app-ui-icon name="people"
+    /></a>
+    <a
+      class="rail-link"
+      href="#coverage-section"
+      [class.active]="activeSection() === 'coverage-section'"
+      [attr.aria-current]="activeSection() === 'coverage-section' ? 'location' : null"
+      (click)="navigate($event, 'coverage-section')"
+      aria-label="Office coverage"
+      title="Office coverage"
+      ><app-ui-icon name="target"
+    /></a>
+    <div class="rail-footer">
+      <span class="workspace-avatar" title="Operations workspace">OP</span>
+    </div>
+  </nav>
+
+  <div class="app-content">
+    <header class="app-header">
+      <a class="wordmark" href="#map-workspace" (click)="navigate($event, 'map-workspace')"
+        >atlas<span class="wordmark-dot"></span><span class="wordmark-caption">WORKFORCE</span></a
+      >
+      <div class="header-path">
+        <span>Workspace</span><app-ui-icon name="chevron" /><strong>Operations map</strong>
+      </div>
+      <div class="header-status">
+        <span class="status-dot"></span>Demo workspace<span class="header-divider"></span
+        ><span class="sample-label">Fictional data</span>
+      </div>
+    </header>
+
+    <section class="page-intro" aria-labelledby="page-title">
+      <div>
+        <div class="eyebrow">PEOPLE. PLACES. POSSIBILITIES.</div>
+        <h1 id="page-title">Your team, in perspective<span>.</span></h1>
+        <p>A clearer view of where your people are. A smarter way to plan what comes next.</p>
+      </div>
+      <div class="region-tag">
+        <app-ui-icon name="pin" />
+        <div><strong>Greater Cairo</strong><span>Egypt operations</span></div>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Workforce overview">
+      <div class="metric">
+        <span class="metric-icon"><app-ui-icon name="people" /></span>
+        <div>
+          <span class="metric-label">TEAM MEMBERS</span
+          ><strong>{{ store.employees().length }}<small>across your organization</small></strong>
+        </div>
+      </div>
+      <div class="metric">
+        <span class="metric-icon mint"><app-ui-icon name="office" /></span>
+        <div>
+          <span class="metric-label">OFFICE LOCATIONS</span
+          ><strong>{{ store.offices().length }}<small>connected workplaces</small></strong>
+        </div>
+      </div>
+      <div class="metric">
+        <span class="metric-icon lavender"><app-ui-icon name="layers" /></span>
+        <div>
+          <span class="metric-label">DEPARTMENTS</span
+          ><strong>{{ departmentCount }}<small>working together</small></strong>
+        </div>
+      </div>
+      <div class="metric metric-selection">
+        <span class="metric-icon teal"><app-ui-icon name="target" /></span>
+        <div>
+          <span class="metric-label">CURRENT SELECTION</span
+          ><strong aria-live="polite"
+            >{{ store.visibleEmployees().length }}<small>employees on the map</small></strong
+          >
+        </div>
+      </div>
+    </section>
+
+    <main class="workspace" id="map-workspace" tabindex="-1">
+      <aside class="sidebar" aria-label="Employee tools">
+        <fieldset [disabled]="map.loadState() !== 'ready'">
+          <section class="panel filter-panel">
+            <app-employee-filters
+              [filters]="store.filters()"
+              [offices]="store.offices()"
+              (changed)="store.updateFilters($event)"
+              (cleared)="reset()"
+            />
+          </section>
+          <section class="panel coverage-panel" id="coverage-section" tabindex="-1">
+            <app-coverage-tool
+              [offices]="store.offices()"
+              [result]="store.coverage()"
+              [busy]="map.analysisBusy()"
+              [visibleCount]="store.visibleEmployees().length"
+              (applied)="map.applyCoverage($event)"
+              (cleared)="map.clearCoverage()"
+            />
+          </section>
+        </fieldset>
+        @if (map.actionError()) {
+          <p class="action-error" role="alert">{{ map.actionError() }}</p>
+        }
+        <section class="panel list-panel" id="employee-directory" tabindex="-1">
+          @if (map.loadState() === 'ready') {
+            <app-employee-list
+              [employees]="store.visibleEmployees()"
+              [offices]="store.offices()"
+              [total]="store.employees().length"
+              [selectedId]="store.selectedId()"
+              (selected)="selectEmployee($event)"
+            />
+          } @else {
+            <p class="loading-copy" role="status">
+              {{
+                map.loadState() === 'error'
+                  ? 'Employee data is unavailable.'
+                  : 'Preparing your team directory...'
+              }}
+            </p>
+          }
+        </section>
+      </aside>
+
+      <section class="map-panel" id="map-panel" aria-label="Employee and office map">
+        <div class="map-toolbar">
+          <div class="map-title">
+            <app-ui-icon name="map" />
+            <div>
+              <h2>Workforce distribution</h2>
+              <span>Explore employee locations and office reach</span>
+            </div>
+          </div>
+          <span class="map-state"
+            ><span class="status-dot"></span
+            >{{
+              map.loadState() === 'ready'
+                ? 'Map ready'
+                : map.loadState() === 'error'
+                  ? 'Map unavailable'
+                  : 'Connecting'
+            }}</span
+          >
+        </div>
+        <div class="map-canvas">
+          <app-map-view />
+          <div class="map-location">
+            <app-ui-icon name="pin" /><span>Greater Cairo, Egypt</span>
+          </div>
+          @if (map.loadState() === 'ready') {
+            <div class="map-selection">
+              <span class="status-dot"></span
+              ><strong>{{ store.visibleEmployees().length }}</strong> employees in view
+            </div>
+          }
+        </div>
+        <footer class="map-footer">
+          <div class="symbol-key">
+            <span><i class="key-employee"></i>Employees</span
+            ><span><i class="key-office"></i>Offices</span>
+            @if (store.coverage()) {
+              <span><i class="key-buffer"></i>Coverage area</span>
+            }
+          </div>
+          <span class="coordinate-note">WGS 84 <span> / </span> Geographic coordinates</span>
+        </footer>
+      </section>
+    </main>
+    <footer class="workspace-footer">
+      <span>Built for better operational decisions.</span
+      ><span>ATLAS <span class="footer-separator">/</span> EMPLOYEE OPERATIONS</span>
+    </footer>
+  </div>
+</div>

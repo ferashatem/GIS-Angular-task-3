@@ -1,0 +1,59 @@
+:host {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+arcgis-map {
+  display: block;
+  height: 100%;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f3f7f5d9;
+  backdrop-filter: blur(5px);
+}
+.state-card {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  max-width: 300px;
+  text-align: center;
+  padding: 27px;
+  background: #fff;
+  border: 1px solid #e3ebe7;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px #12372a0a;
+}
+.state-card strong {
+  font-size: 13px;
+  color: #26463c;
+}
+.state-card p {
+  font-size: 11px;
+  color: #788b83;
+  line-height: 1.7;
+}
+.loading-ring {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #e3efea;
+  border-top-color: #087f75;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 3px;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loading-ring {
+    animation: none;
+  }
+}

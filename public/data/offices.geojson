@@ -1,0 +1,56 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.34,
+          30.056
+        ]
+      },
+      "properties": {
+        "id": 1,
+        "name": "Nasr City Office",
+        "area": "Nasr City, Cairo",
+        "latitude": 30.056,
+        "longitude": 31.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.258,
+          29.96
+        ]
+      },
+      "properties": {
+        "id": 2,
+        "name": "Maadi Office",
+        "area": "Maadi, Cairo",
+        "latitude": 29.96,
+        "longitude": 31.258
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.98,
+          30.04
+        ]
+      },
+      "properties": {
+        "id": 3,
+        "name": "Sheikh Zayed Office",
+        "area": "Sheikh Zayed, Giza",
+        "latitude": 30.04,
+        "longitude": 30.98
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+<div class="section-heading directory-heading">
+  <div class="section-title">
+    <h2>Team directory</h2>
+    <span class="count" aria-live="polite">{{ employees().length }}</span>
+  </div>
+  <span class="directory-total">of {{ total() }} people</span>
+</div>
+<p class="muted small directory-hint">Select a teammate to explore their location.</p>
+@if (employees().length === 0) {
+  <div class="empty-state" role="status">
+    <span class="empty-icon"><app-ui-icon name="search" /></span
+    ><strong>No people in this view</strong>
+    <p>Try another name, reset your filters, or change the coverage area.</p>
+  </div>
+}
+<ul class="employee-list">
+  @for (employee of employees(); track employee.id) {
+    <li>
+      <button
+        class="employee-card"
+        [class.selected]="selectedId() === employee.id"
+        [attr.aria-pressed]="selectedId() === employee.id"
+        [style.--department-color]="colors[employee.department]"
+        (click)="selected.emit(employee)"
+      >
+        <span class="employee-avatar" aria-hidden="true">{{ initials(employee.fullName) }}</span>
+        <span class="employee-details"
+          ><strong>{{ employee.fullName }}</strong
+          ><span class="employee-role">{{ employee.jobTitle }}</span
+          ><span class="employee-meta"
+            ><span class="department-label"><i></i>{{ employee.department }}</span
+            ><span class="employee-office">{{ officeName(employee.officeId) }}</span></span
+          ></span
+        >
+        <span class="employee-locate"><app-ui-icon name="arrow" /></span>
+      </button>
+    </li>
+  }
+</ul>

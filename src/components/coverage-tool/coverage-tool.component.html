@@ -1,0 +1,69 @@
+<div class="section-heading">
+  <div class="section-title">
+    <span class="coverage-icon"><app-ui-icon name="target" /></span>
+    <h2>Explore office reach</h2>
+  </div>
+  @if (result() || busy()) {
+    <button type="button" class="text-button" (click)="cleared.emit()">Clear coverage</button>
+  } @else {
+    <span class="feature-label">SPATIAL ANALYSIS</span>
+  }
+</div>
+<p class="muted small coverage-description">Find the people within reach of any office.</p>
+<form (ngSubmit)="run()">
+  <div class="coverage-fields">
+    <div>
+      <label for="coverage-office">Office location</label
+      ><select id="coverage-office" name="office" [(ngModel)]="officeId" required>
+        <option [ngValue]="null" disabled>Select an office</option>
+        @for (office of offices(); track office.id) {
+          <option [ngValue]="office.id">{{ office.name }}</option>
+        }
+      </select>
+    </div>
+    <fieldset class="distance-fieldset">
+      <legend>Distance from office</legend>
+      <div class="distance-options">
+        @for (distance of distances; track distance) {
+          <label class="distance-option"
+            ><input type="radio" name="distance" [value]="distance" [(ngModel)]="distanceKm" /><span
+              >{{ distance }}<small> km</small></span
+            ></label
+          >
+        }
+      </div>
+    </fieldset>
+  </div>
+  <button
+    class="primary-button analyze-button"
+    type="submit"
+    [disabled]="officeId === null || busy()"
+    aria-describedby="coverage-help"
+  >
+    <app-ui-icon name="target" />{{ busy() ? 'Calculating coverage...' : 'Analyze coverage'
+    }}<app-ui-icon name="arrow" />
+  </button>
+</form>
+<p id="coverage-help" class="analysis-note" aria-live="polite">
+  {{
+    officeId === null
+      ? 'Choose an office to enable coverage analysis.'
+      : 'Select a distance, then analyze coverage.'
+  }}
+</p>
+@if (result(); as coverage) {
+  <div class="coverage-result" role="status">
+    <div class="result-heading">
+      <span class="result-number">{{ coverage.employeeIds.length }}</span>
+      <div>
+        <strong>employees within reach</strong
+        ><span>{{ coverage.distanceKm }} km from {{ coverage.officeName }}</span>
+      </div>
+    </div>
+    <p>{{ visibleCount() }} shown after employee filters. Dashed outline: coverage boundary.</p>
+  </div>
+} @else {
+  <p class="analysis-note">
+    <app-ui-icon name="compass" /><span>Geographic proximity, across all assigned offices.</span>
+  </p>
+}

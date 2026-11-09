@@ -1,0 +1,35 @@
+<arcgis-map
+  [map]="mapService.map"
+  center="31.2357,30.0444"
+  zoom="10"
+  (arcgisViewReadyChange)="onViewReady($event)"
+  (arcgisViewReadyError)="mapService.handleViewError()"
+>
+  <arcgis-zoom slot="top-right"></arcgis-zoom>
+  <arcgis-home #home slot="top-right"></arcgis-home>
+  <arcgis-expand
+    slot="bottom-right"
+    [expanded]="false"
+    expand-tooltip="Show legend"
+    collapse-tooltip="Hide legend"
+    ><arcgis-legend></arcgis-legend
+  ></arcgis-expand>
+</arcgis-map>
+@if (mapService.loadState() === 'loading') {
+  <div class="overlay" role="status">
+    <div class="state-card">
+      <span class="loading-ring" aria-hidden="true"></span
+      ><strong>Bringing your team into view</strong>
+      <p>Loading the map and employee locations.</p>
+    </div>
+  </div>
+}
+@if (mapService.loadState() === 'error') {
+  <div class="overlay overlay--error" role="alert">
+    <div class="state-card">
+      <strong>Let's reconnect</strong>
+      <p>{{ mapService.errorMessage() }}</p>
+      <button class="primary-button" (click)="retry()">Retry</button>
+    </div>
+  </div>
+}

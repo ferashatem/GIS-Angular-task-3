@@ -1,0 +1,509 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.346235,
+          30.065346
+        ]
+      },
+      "properties": {
+        "id": 1,
+        "fullName": "Ahmed Samir",
+        "jobTitle": "Frontend Developer",
+        "department": "Engineering",
+        "email": "ahmed.samir@company.example",
+        "phoneNumber": "+20 100 000 0001",
+        "latitude": 30.065346,
+        "longitude": 31.346235,
+        "officeId": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.333604,
+          30.040788
+        ]
+      },
+      "properties": {
+        "id": 2,
+        "fullName": "Mariam Adel",
+        "jobTitle": "HR Specialist",
+        "department": "Human Resources",
+        "email": "mariam.adel@company.example",
+        "phoneNumber": "+20 100 000 0002",
+        "latitude": 30.040788,
+        "longitude": 31.333604,
+        "officeId": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.376366,
+          30.055995
+        ]
+      },
+      "properties": {
+        "id": 3,
+        "fullName": "Omar Khaled",
+        "jobTitle": "Sales Executive",
+        "department": "Sales",
+        "email": "omar.khaled@company.example",
+        "phoneNumber": "+20 100 000 0003",
+        "latitude": 30.055995,
+        "longitude": 31.376366,
+        "officeId": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.3022,
+          30.07488
+        ]
+      },
+      "properties": {
+        "id": 4,
+        "fullName": "Nour Hassan",
+        "jobTitle": "Backend Developer",
+        "department": "Engineering",
+        "email": "nour.hassan@company.example",
+        "phoneNumber": "+20 100 000 0004",
+        "latitude": 30.07488,
+        "longitude": 31.3022,
+        "officeId": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.373751,
+          30.005371
+        ]
+      },
+      "properties": {
+        "id": 5,
+        "fullName": "Youssef Tarek",
+        "jobTitle": "Operations Coordinator",
+        "department": "Operations",
+        "email": "youssef.tarek@company.example",
+        "phoneNumber": "+20 100 000 0005",
+        "latitude": 30.005371,
+        "longitude": 31.373751,
+        "officeId": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.354444,
+          30.126852
+        ]
+      },
+      "properties": {
+        "id": 6,
+        "fullName": "Salma Ibrahim",
+        "jobTitle": "Account Manager",
+        "department": "Sales",
+        "email": "salma.ibrahim@company.example",
+        "phoneNumber": "+20 100 000 0006",
+        "latitude": 30.126852,
+        "longitude": 31.354444,
+        "officeId": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.457047,
+          30.114404
+        ]
+      },
+      "properties": {
+        "id": 7,
+        "fullName": "Karim Mostafa",
+        "jobTitle": "DevOps Engineer",
+        "department": "Engineering",
+        "email": "karim.mostafa@company.example",
+        "phoneNumber": "+20 100 000 0007",
+        "latitude": 30.114404,
+        "longitude": 31.457047,
+        "officeId": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.296818,
+          30.034409
+        ]
+      },
+      "properties": {
+        "id": 8,
+        "fullName": "Hana Mahmoud",
+        "jobTitle": "Recruiter",
+        "department": "Human Resources",
+        "email": "hana.mahmoud@company.example",
+        "phoneNumber": "+20 100 000 0008",
+        "latitude": 30.034409,
+        "longitude": 31.296818,
+        "officeId": 1
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.26609,
+          29.955953
+        ]
+      },
+      "properties": {
+        "id": 9,
+        "fullName": "Mohamed Fathy",
+        "jobTitle": "QA Engineer",
+        "department": "Engineering",
+        "email": "mohamed.fathy@company.example",
+        "phoneNumber": "+20 100 000 0009",
+        "latitude": 29.955953,
+        "longitude": 31.26609,
+        "officeId": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.249695,
+          29.972461
+        ]
+      },
+      "properties": {
+        "id": 10,
+        "fullName": "Laila Sherif",
+        "jobTitle": "Logistics Specialist",
+        "department": "Operations",
+        "email": "laila.sherif@company.example",
+        "phoneNumber": "+20 100 000 0010",
+        "latitude": 29.972461,
+        "longitude": 31.249695,
+        "officeId": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.280024,
+          29.979076
+        ]
+      },
+      "properties": {
+        "id": 11,
+        "fullName": "Tamer Nabil",
+        "jobTitle": "Sales Manager",
+        "department": "Sales",
+        "email": "tamer.nabil@company.example",
+        "phoneNumber": "+20 100 000 0011",
+        "latitude": 29.979076,
+        "longitude": 31.280024,
+        "officeId": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.258,
+          29.919531
+        ]
+      },
+      "properties": {
+        "id": 12,
+        "fullName": "Dina Ashraf",
+        "jobTitle": "Payroll Officer",
+        "department": "Human Resources",
+        "email": "dina.ashraf@company.example",
+        "phoneNumber": "+20 100 000 0012",
+        "latitude": 29.919531,
+        "longitude": 31.258,
+        "officeId": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.183262,
+          29.959979
+        ]
+      },
+      "properties": {
+        "id": 13,
+        "fullName": "Hossam Ali",
+        "jobTitle": "Fleet Supervisor",
+        "department": "Operations",
+        "email": "hossam.ali@company.example",
+        "phoneNumber": "+20 100 000 0013",
+        "latitude": 29.959979,
+        "longitude": 31.183262,
+        "officeId": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.241584,
+          30.040594
+        ]
+      },
+      "properties": {
+        "id": 14,
+        "fullName": "Rana Magdy",
+        "jobTitle": "UI Designer",
+        "department": "Engineering",
+        "email": "rana.magdy@company.example",
+        "phoneNumber": "+20 100 000 0014",
+        "latitude": 30.040594,
+        "longitude": 31.241584,
+        "officeId": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.234591,
+          29.952616
+        ]
+      },
+      "properties": {
+        "id": 15,
+        "fullName": "Sherif Wael",
+        "jobTitle": "Business Developer",
+        "department": "Sales",
+        "email": "sherif.wael@company.example",
+        "phoneNumber": "+20 100 000 0015",
+        "latitude": 29.952616,
+        "longitude": 31.234591,
+        "officeId": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.375539,
+          29.941989
+        ]
+      },
+      "properties": {
+        "id": 16,
+        "fullName": "Aya Mohsen",
+        "jobTitle": "Operations Analyst",
+        "department": "Operations",
+        "email": "aya.mohsen@company.example",
+        "phoneNumber": "+20 100 000 0016",
+        "latitude": 29.941989,
+        "longitude": 31.375539,
+        "officeId": 2
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.994323,
+          30.042186
+        ]
+      },
+      "properties": {
+        "id": 17,
+        "fullName": "Mostafa Gamal",
+        "jobTitle": "Mobile Developer",
+        "department": "Engineering",
+        "email": "mostafa.gamal@company.example",
+        "phoneNumber": "+20 100 000 0017",
+        "latitude": 30.042186,
+        "longitude": 30.994323,
+        "officeId": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.964878,
+          30.050983
+        ]
+      },
+      "properties": {
+        "id": 18,
+        "fullName": "Nada Yasser",
+        "jobTitle": "HR Coordinator",
+        "department": "Human Resources",
+        "email": "nada.yasser@company.example",
+        "phoneNumber": "+20 100 000 0018",
+        "latitude": 30.050983,
+        "longitude": 30.964878,
+        "officeId": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.005369,
+          30.013819
+        ]
+      },
+      "properties": {
+        "id": 19,
+        "fullName": "Ali Hesham",
+        "jobTitle": "Warehouse Lead",
+        "department": "Operations",
+        "email": "ali.hesham@company.example",
+        "phoneNumber": "+20 100 000 0019",
+        "latitude": 30.013819,
+        "longitude": 31.005369,
+        "officeId": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.997418,
+          30.081408
+        ]
+      },
+      "properties": {
+        "id": 20,
+        "fullName": "Farah Essam",
+        "jobTitle": "Sales Representative",
+        "department": "Sales",
+        "email": "farah.essam@company.example",
+        "phoneNumber": "+20 100 000 0020",
+        "latitude": 30.081408,
+        "longitude": 30.997418,
+        "officeId": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.93995,
+          29.998659
+        ]
+      },
+      "properties": {
+        "id": 21,
+        "fullName": "Ziad Amr",
+        "jobTitle": "Data Engineer",
+        "department": "Engineering",
+        "email": "ziad.amr@company.example",
+        "phoneNumber": "+20 100 000 0021",
+        "latitude": 29.998659,
+        "longitude": 30.93995,
+        "officeId": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.070031,
+          30.03315
+        ]
+      },
+      "properties": {
+        "id": 22,
+        "fullName": "Menna Reda",
+        "jobTitle": "Training Specialist",
+        "department": "Human Resources",
+        "email": "menna.reda@company.example",
+        "phoneNumber": "+20 100 000 0022",
+        "latitude": 30.03315,
+        "longitude": 31.070031,
+        "officeId": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.881769,
+          30.054955
+        ]
+      },
+      "properties": {
+        "id": 23,
+        "fullName": "Hazem Ayman",
+        "jobTitle": "Dispatch Officer",
+        "department": "Operations",
+        "email": "hazem.ayman@company.example",
+        "phoneNumber": "+20 100 000 0023",
+        "latitude": 30.054955,
+        "longitude": 30.881769,
+        "officeId": 3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.002345,
+          29.930176
+        ]
+      },
+      "properties": {
+        "id": 24,
+        "fullName": "Yara Hamdy",
+        "jobTitle": "Key Account Lead",
+        "department": "Sales",
+        "email": "yara.hamdy@company.example",
+        "phoneNumber": "+20 100 000 0024",
+        "latitude": 29.930176,
+        "longitude": 31.002345,
+        "officeId": 3
+      }
+    }
+  ]
+}

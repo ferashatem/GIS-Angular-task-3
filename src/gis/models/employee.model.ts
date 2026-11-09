@@ -1,5 +1,12 @@
 export type Department = 'Engineering' | 'Sales' | 'Human Resources' | 'Operations';
 
+export const DEPARTMENTS: readonly Department[] = [
+  'Engineering',
+  'Sales',
+  'Human Resources',
+  'Operations',
+];
+
 export interface Employee {
   id: number;
   fullName: string;

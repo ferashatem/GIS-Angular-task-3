@@ -1,0 +1,53 @@
+<div class="section-heading">
+  <div class="section-title">
+    <app-ui-icon name="search" />
+    <h2>Find your people</h2>
+  </div>
+  <button
+    type="button"
+    class="text-button reset-button"
+    (click)="cleared.emit()"
+    aria-label="Reset all filters and coverage"
+    title="Reset filters, clear coverage, and show all locations"
+  >
+    <app-ui-icon name="reset" />Reset
+  </button>
+</div>
+<label class="sr-only" for="employee-search">Employee name</label>
+<div class="search-field">
+  <app-ui-icon name="search" /><input
+    id="employee-search"
+    type="search"
+    placeholder="Search employee name..."
+    [ngModel]="filters().searchText"
+    (ngModelChange)="changed.emit({ searchText: $event })"
+  />
+</div>
+<div class="field-grid">
+  <div>
+    <label for="department">Department</label
+    ><select
+      id="department"
+      [ngModel]="filters().department"
+      (ngModelChange)="changed.emit({ department: $event })"
+    >
+      <option [ngValue]="null">All departments</option>
+      @for (department of departments; track department) {
+        <option [ngValue]="department">{{ department }}</option>
+      }
+    </select>
+  </div>
+  <div>
+    <label for="assigned-office">Assigned office</label
+    ><select
+      id="assigned-office"
+      [ngModel]="filters().officeId"
+      (ngModelChange)="changed.emit({ officeId: $event })"
+    >
+      <option [ngValue]="null">All offices</option>
+      @for (office of offices(); track office.id) {
+        <option [ngValue]="office.id">{{ office.name }}</option>
+      }
+    </select>
+  </div>
+</div>
